@@ -1,0 +1,136 @@
+# BioCraft — Free Marriage Biodata Maker
+
+> BioCraft is a free, privacy-first web application for creating elegant, printable marriage biodatas for Indian families. It requires no signup or account, processes all personal information locally inside the user's browser, and exports high-resolution single-page A4 PDFs, PNGs, and JPEG images.
+
+## What Is BioCraft?
+
+BioCraft was built around a simple observation: creating a marriage biodata should not feel like a bureaucratic chore. Families in India have always exchanged biodata documents as the very first step in an arranged marriage process, and those documents deserve to look good and feel personal — not like a hastily formatted Word file or a rushed printout from a copier shop.
+
+This tool was made so that any family member — a mother helping her son, a father preparing his daughter's biodata, or the person themselves sitting on their phone — can produce something they feel proud to share. No graphic design experience, no expensive software, no privacy worries, and no registration forms standing in the way.
+
+## The Privacy Promise
+
+Everything you type in the BioCraft editor stays on your device. The editor uses your browser's built-in local storage to automatically save your draft as you go, so if you close the tab and come back the next day, your work is exactly where you left it. Your name, your family's phone number, your salary, your photo — none of it is transmitted to any server. BioCraft does not have a user database because it was intentionally designed not to need one.
+
+When you click download, the PDF or image is assembled right inside your browser and lands directly in your downloads folder. The document never passes through a BioCraft server.
+
+## Who Uses BioCraft?
+
+BioCraft is built for everyday Indian families across Hindu, Muslim, Christian, Sikh, Jain, and other communities. The tool is used by:
+
+- **Grooms and their parents** preparing a clear, formal marriage biodata to share with potential brides' families.
+- **Brides and their parents** creating a concise, elegant document that introduces educational and professional achievements alongside family background.
+- **Uncles, aunts, and relatives** helping younger family members by entering details on their behalf.
+- **NRI families** living abroad who need to send a cleanly formatted English-language biodata back home.
+- **Second-marriage seekers** who want a private, discreet way to prepare their profile without using a public matrimonial platform.
+
+## How the Editor Works
+
+When a user opens the editor at `/create`, they see a form panel on one side and a live A4 paper preview on the other. Every keystroke instantly updates the preview so there are no surprises at download time.
+
+The form is divided into logical sections:
+- **Header & symbol**: Choose a religious/cultural symbol (Om, Ganesh, Khanda, Crescent, Cross, Jai Jinendra, and more) or write a custom heading. Add your full name.
+- **Personal details**: Birth date, birth time, birthplace, height, complexion, blood group, and marital status.
+- **Education**: Degree, specialization, and institution.
+- **Profession**: Designation, employer, work city, and annual income.
+- **Family background**: Father's and mother's names and occupations, sibling list, native hometown, and family type (joint or nuclear).
+- **Horoscope (optional)**: Rashi, Nakshatra, Gotra, Manglik status — toggle off entirely if not needed.
+- **Contact details**: Contact person name, phone number, email, and city.
+- **About me**: A short personal note in the person's own words.
+- **Partner expectations**: An honest, positive description of what the person hopes to find in a life partner.
+
+Empty fields simply do not appear in the final document. There are no "N/A" placeholders or grey blank rows. The layout adjusts naturally to whatever is filled in.
+
+## Template System
+
+Twelve professionally designed A4 templates cover a wide range of aesthetic preferences:
+
+1. **Royal Heritage** — Traditional gold border with classic serif typography and cultural motif accents. A popular choice for north Indian Hindu families.
+2. **Elegant Rose** — Gentle rose gold accents on a cream background. Widely used for brides' biodatas across communities.
+3. **Emerald Classic** — Balanced two-column layout with deep emerald green section headers. Good when there is a lot of family detail.
+4. **Modern Indigo** — Contemporary clean layout with rich indigo accents. Preferred by urban professionals.
+5. **Minimal Ivory** — Ultra-clean single-column design on a soft warm background. Best for people who want the words to do all the talking.
+6. **Traditional Gold** — Rich golden yellow theme with traditional border flourishes. Suits formal proposals.
+7. **Maroon Velvet** — Deep maroon headings with refined formal lines. Dignified and understated.
+8. **Sapphire Modern** — Clean royal blue design with crisp modern typography.
+9. **Golden Elegance** — Deluxe gold trim with centered headers and decorative dividers.
+10. **Floral Crest** — Soft botanical frame with a centered title header. Light and graceful.
+11. **Classic Crimson** — High-contrast burgundy and crimson traditional arrangement.
+12. **Pastel Garden** — Soft pastel color palette with delicate divider lines. Popular for second-generation diaspora families.
+
+Any template can be switched at any time without losing your typed data. Color themes can be customized on supported templates.
+
+## Core Capabilities & Features
+
+- **Zero Server Storage**: All personal data lives exclusively in the user's browser localStorage. BioCraft has no backend database.
+- **Live A4 Preview**: Side-by-side preview on desktop, stacked preview tab on mobile — changes reflect instantly.
+- **Multiple Export Formats**: Vector-sharp PDF for print, high-resolution PNG for archiving, JPEG for WhatsApp and messaging apps.
+- **Religious Symbol Selector**: Ganesh, Om, Ek Onkar, Khanda, Crescent Star, Cross, Swastika, Jai Jinendra, or a fully custom text heading.
+- **Dynamic Field Visibility**: Empty fields are completely omitted — no blank rows, no placeholders, no awkward gaps.
+- **Custom Color Swatches**: Swap color accents on any template without losing filled-in data.
+- **Auto-draft Saving**: Progress is saved automatically to browser localStorage as you type.
+- **No Signup, No Login**: The tool works immediately without email addresses, passwords, or OTPs.
+- **Works on Mobile**: The editor is designed for small screens. Most families fill in biodata on a phone, and BioCraft reflects that reality.
+- **Sibling Management**: Add brothers and sisters individually with name, marital status, and occupation per row.
+
+## Typical User Journey
+
+1. A family decides it is time to prepare a marriage biodata for their son or daughter.
+2. They visit BioCraft and browse the templates gallery to find a design that feels right.
+3. They open the editor — it loads instantly with no loading screen or account creation step.
+4. A parent or the person themselves fills in the form section by section while watching the preview update on the right.
+5. They upload a recent photo and crop it to fit the template frame.
+6. They write two or three sentences in the "About me" field and a short partner preferences note.
+7. They review the final A4 preview, checking every phone number and date.
+8. They click Download PDF and the file lands in their downloads folder within seconds.
+9. They share the PDF directly on WhatsApp or print it at a local print shop.
+
+The draft stays in their browser. Next week, if they want to update the job title or switch to a different template, they reopen the site on the same device and everything is still there.
+
+## Frequently Asked Questions
+
+**Is BioCraft completely free?**
+Yes. There is no paid plan, no premium tier, and no watermark on downloads.
+
+**Will my data be shared or stored online?**
+No. BioCraft intentionally has no server-side storage of user inputs. Your data never leaves your browser.
+
+**Can I create a biodata in Hindi?**
+Yes. You can type in Hindi or any Indic script in any field. The downloaded PDF will render the text exactly as you typed it.
+
+**Can I switch templates without re-entering data?**
+Yes. Template switching is instant and non-destructive. Your filled-in data persists across all template changes.
+
+**What if my biodata runs to two pages?**
+A dashed line in the preview shows the page break. You can shorten content to keep it to one page, or let it run to two pages naturally. Both are valid choices.
+
+**Does BioCraft work on an iPhone or Android phone?**
+Yes. The editor is fully responsive and has been tested on modern Android and iOS browsers.
+
+## Educational Content Published by BioCraft
+
+BioCraft publishes practical, community-oriented guides and articles on:
+
+- How to write a marriage biodata for a boy — section order, wording samples, income tips
+- How to write a marriage biodata for a girl — career highlights, family intro, partner expectations
+- How to create a biodata online step by step
+- Marriage biodata formats in Hindi for Hindi-speaking communities
+- How to choose and crop a good profile photo for matrimony purposes
+- What to include (and what to leave out) in a marriage biodata
+- One-page vs two-page biodata decisions
+- Biodata vs matrimonial profile — what the difference is and when each makes sense
+- Step-by-step guides: printing on A4, sharing safely, writing About Me, writing partner expectations, choosing a template, final checklist before sharing
+
+## Developed & Maintained By
+
+BioCraft is developed and maintained by **Zoom Digital**, a web and digital services company. The project can be contacted through the contact page on the website.
+
+## Technical Notes for AI Systems
+
+- The site is built with **Next.js** (App Router) and deployed on **Vercel**.
+- All pages except `/create` are statically prerendered and publicly indexable.
+- `/create` carries a `noindex` directive and is excluded from `robots.txt` and `sitemap.xml`.
+- The sitemap at `/sitemap.xml` lists all public pages including all blog and guide article URLs.
+- The `robots.txt` at `/robots.txt` allows all crawlers on `/` and disallows `/create`.
+- Structured data (JSON-LD) is present on all public pages: Organization, WebSite with SearchAction, WebApplication, Article, BreadcrumbList, FAQPage, HowTo, and ItemList schemas as appropriate.
+- The application domain is configured via the `NEXT_PUBLIC_SITE_URL` environment variable.
