@@ -15,7 +15,7 @@ export function TemplateShowcase() {
       />
 
       {/* Grid of Templates */}
-      <ul className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:mt-12 sm:gap-x-8 sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {templates.slice(0, 6).map((t) => (
           <li key={t.id}>
             <TemplateCard template={t} />

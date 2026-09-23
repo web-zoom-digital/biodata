@@ -35,8 +35,8 @@ export function HowItWorksHero() {
 
       <Container className="relative z-10">
         {/* Breadcrumb Trail */}
-        <nav aria-label="Breadcrumb" className="mb-6 text-xs font-semibold uppercase tracking-wider text-slate-700">
-          <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        <nav aria-label="Breadcrumb" className="mb-6 text-xs font-semibold uppercase tracking-wider text-slate-700 flex justify-center lg:justify-start">
+          <ol className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
             {trail.map((c, i) => (
               <li key={c.path} className="flex items-center gap-2">
                 {i < trail.length - 1 ? (
@@ -58,7 +58,7 @@ export function HowItWorksHero() {
 
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Headline, Description & Actions */}
-          <div className="flex flex-col items-start text-left lg:col-span-6">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-6">
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/80 bg-white/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-emerald-700 shadow-sm backdrop-blur-md">
               <Sparkles className="size-3.5 text-emerald-500" aria-hidden="true" />
@@ -66,7 +66,7 @@ export function HowItWorksHero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
+            <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
               How to Make a{" "}
               <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-green-700 bg-clip-text text-transparent">
                 Marriage Biodata
@@ -80,12 +80,12 @@ export function HowItWorksHero() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
               <Button
                 href="/create"
                 variant="cta"
                 size="lg"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.03] hover:shadow-emerald-500/40"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.03] hover:shadow-emerald-500/40 w-full sm:w-auto"
               >
                 <span>Create Your Biodata Now</span>
                 <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -94,7 +94,7 @@ export function HowItWorksHero() {
                 href="/templates"
                 variant="outline"
                 size="lg"
-                className="rounded-full border border-slate-300/80 bg-white/80 px-6 py-3.5 text-base font-semibold text-slate-800 backdrop-blur-sm transition-all hover:bg-white hover:border-emerald-500/50 hover:shadow-md"
+                className="rounded-full border border-slate-300/80 bg-white/80 px-6 py-3.5 text-base font-semibold text-slate-800 backdrop-blur-sm transition-all hover:bg-white hover:border-emerald-500/50 hover:shadow-md w-full sm:w-auto justify-center"
               >
                 Explore Templates
               </Button>

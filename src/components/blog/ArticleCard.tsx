@@ -22,8 +22,9 @@ export function ArticleCard({ item, kind }: { item: ContentMeta; kind: ContentKi
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
           />
         ) : (
-          <div className="flex size-full items-center justify-center bg-sky-50 text-sky-600">
-            <span className="text-3xl">📰</span>
+          <div className="flex size-full flex-col items-center justify-center bg-gradient-to-br from-sky-100 via-indigo-50 to-purple-100 p-6 text-center text-slate-800">
+            <span className="font-display text-xs font-bold uppercase tracking-wider text-sky-700">{item.category}</span>
+            <p className="mt-1.5 line-clamp-2 text-xs font-semibold text-slate-700">{item.title}</p>
           </div>
         )}
         {/* Soft bottom vignette overlay */}

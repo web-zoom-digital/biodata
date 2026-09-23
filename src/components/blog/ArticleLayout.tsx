@@ -57,8 +57,8 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
         <div className="pointer-events-none absolute top-1/2 -right-20 size-[28rem] rounded-full bg-violet-300/35 blur-3xl" aria-hidden="true" />
 
         <Container className="relative z-10">
-          <nav aria-label="Breadcrumb" className="mb-6 text-xs font-semibold uppercase tracking-wider text-slate-700">
-            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <nav aria-label="Breadcrumb" className="mb-6 text-xs font-semibold uppercase tracking-wider text-slate-700 flex justify-center lg:justify-start">
+            <ol className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
               <li>
                 <Link href="/" className="hover:text-purple-700 hover:underline">
                   Home
@@ -78,8 +78,8 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
           </nav>
 
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
-            <div className="flex flex-col items-start text-left lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-purple-300/80 bg-white/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 shadow-sm backdrop-blur-md">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-7">
+              <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-purple-300/80 bg-white/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 shadow-sm backdrop-blur-md">
                 <Sparkles className="size-3.5 text-purple-500" aria-hidden="true" />
                 <span>{item.category}</span>
                 <span className="text-slate-300">&middot;</span>
@@ -88,7 +88,7 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
                 <span>{item.readingMinutes} min read</span>
               </div>
 
-              <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-[1.15]">
+              <h1 className="mt-4 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-[1.15]">
                 {item.title}
               </h1>
 
@@ -96,12 +96,12 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
                 {item.description}
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center gap-4">
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
                 <Button
                   href={editUrl}
                   variant="cta"
                   size="lg"
-                  className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-purple-500/30 transition-all hover:scale-[1.03] hover:shadow-purple-500/40 active:scale-[0.98]"
+                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-purple-500/30 transition-all hover:scale-[1.03] hover:shadow-purple-500/40 active:scale-[0.98] w-full sm:w-auto"
                 >
                   <Pencil className="size-4.5" aria-hidden="true" />
                   <span>Edit {featuredTemplate.name} Template</span>

@@ -58,10 +58,10 @@ export function PageHero({
       {crumbs?.length ? <JsonLd data={breadcrumbJsonLd(trail)} /> : null}
       
       <Container className="relative z-10">
-        <div className="max-w-3xl rounded-2xl border border-white/15 bg-white/10 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center rounded-2xl border border-white/15 bg-white/10 p-6 sm:mx-0 sm:items-start sm:p-8 sm:text-left backdrop-blur-md shadow-2xl">
           {crumbs?.length ? (
-            <nav aria-label="Breadcrumb" className="mb-4 text-xs font-semibold uppercase tracking-wider text-sky-300">
-              <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <nav aria-label="Breadcrumb" className="mb-4 text-xs font-semibold uppercase tracking-wider text-sky-300 flex justify-center sm:justify-start">
+              <ol className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1">
                 {trail.map((c, i) => (
                   <li key={c.path} className="flex items-center gap-2">
                     {i < trail.length - 1 ? (
@@ -81,7 +81,7 @@ export function PageHero({
               </ol>
             </nav>
           ) : null}
-          <h1 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">{title}</h1>
+          <h1 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">{title}</h1>
           {intro ? <p className="mt-3.5 text-base sm:text-lg leading-relaxed text-sky-100/90">{intro}</p> : null}
           {children}
         </div>

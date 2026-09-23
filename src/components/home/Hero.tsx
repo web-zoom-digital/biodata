@@ -31,7 +31,7 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
           
           {/* Left Column: Headline, Description & Actions */}
-          <div className="flex flex-col items-start text-left lg:col-span-6">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-6">
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/80 bg-white/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-sky-700 shadow-sm backdrop-blur-md">
               <Sparkles className="size-3.5 text-sky-500" aria-hidden="true" />
@@ -39,7 +39,7 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="mt-5 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
+            <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.12]">
               Build Your{" "}
               <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
                 Perfect Biodata
@@ -53,12 +53,12 @@ export function Hero() {
             </p>
 
             {/* CTA Buttons matching Reference Button style */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
               <Button
                 href="/create"
                 variant="cta"
                 size="lg"
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.03] hover:shadow-orange-500/40 active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-[1.03] hover:shadow-orange-500/40 active:scale-[0.98] w-full sm:w-auto"
               >
                 <span>Create Your Biodata</span>
                 <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
@@ -67,7 +67,7 @@ export function Hero() {
                 href="/templates"
                 variant="cta"
                 size="lg"
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.03] hover:shadow-blue-500/40 active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.03] hover:shadow-blue-500/40 active:scale-[0.98] w-full sm:w-auto"
               >
                 <span>Explore All Templates</span>
                 <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
