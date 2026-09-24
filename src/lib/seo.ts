@@ -22,6 +22,16 @@ export const defaultMetadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: `${siteConfig.name}: Free marriage biodata maker`, description: siteConfig.shortDescription },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 interface PageMetaInput {

@@ -121,7 +121,7 @@ export function Footer() {
 
         <div className="mx-auto mt-4 max-w-6xl border-t border-slate-800/50 px-5 pt-4 text-center sm:px-8">
           <p className="text-xs text-slate-600">
-            Developed &amp; maintained by{" "}
+            Designed, Developed &amp; SEO Managed by{" "}
             <a
               href="https://www.zoomdigital.in/"
               target="_blank"
@@ -130,7 +130,6 @@ export function Footer() {
             >
               Zoom Digital
             </a>
-            {" "}— a web &amp; digital services company.
           </p>
         </div>
       </div>

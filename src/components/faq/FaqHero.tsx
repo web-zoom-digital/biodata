@@ -1,14 +1,20 @@
-import { ArrowRight, CheckCircle2, HelpCircle, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { TemplatePreview } from "@/components/templates/TemplatePreview";
 import { Button } from "@/components/ui/Button";
+import { getTemplate } from "@/templates";
 
 interface Props {
   trail?: { name: string; path: string }[];
 }
 
 export function FaqHero({ trail = [{ name: "Home", path: "/" }, { name: "FAQ", path: "/faq" }] }: Props) {
+  const templateCenter = getTemplate("emerald-classic") || getTemplate("modern-indigo");
+  const templateLeft = getTemplate("royal-heritage");
+  const templateRight = getTemplate("elegant-rose") || getTemplate("classic-gold");
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-cyan-50/90 via-sky-50/80 to-teal-100/90 py-12 sm:py-20 lg:py-24">
       {/* Background Image */}
@@ -83,12 +89,14 @@ export function FaqHero({ trail = [{ name: "Home", path: "/" }, { name: "FAQ", p
                 <span>Create Your Biodata</span>
                 <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Button>
-              <a
-                href="#faqs"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-slate-300/80 bg-white/80 px-6 text-base font-semibold text-slate-800 backdrop-blur-sm transition-all hover:bg-white hover:border-cyan-400/60 hover:shadow-md w-full sm:w-auto"
+              <Button
+                href="/templates"
+                variant="outline"
+                size="lg"
+                className="rounded-full border border-slate-300/80 bg-white/80 px-6 py-3.5 text-base font-semibold text-slate-800 backdrop-blur-sm transition-all hover:bg-white hover:border-cyan-500/50 hover:shadow-md w-full sm:w-auto justify-center"
               >
-                Browse All FAQs
-              </a>
+                Explore Templates
+              </Button>
             </div>
 
             {/* Feature Checklist */}
@@ -109,13 +117,13 @@ export function FaqHero({ trail = [{ name: "Home", path: "/" }, { name: "FAQ", p
             </ul>
           </div>
 
-          {/* Right Column — FAQ Cards Visual */}
+          {/* Right Column: Tilted 3D Stack of Templates with Handwritten Arrow Annotation */}
           <div className="relative flex items-center justify-center lg:col-span-6">
-            {/* Handwritten Annotation */}
-            <div className="absolute -top-10 left-8 z-20 hidden sm:flex items-center gap-2 font-semibold text-sm text-cyan-800">
+            {/* Handwritten Style Curved Arrow Annotation */}
+            <div className="absolute -top-10 left-8 z-20 hidden sm:flex items-center gap-2 text-cyan-800 font-semibold text-sm">
               <div className="flex flex-col items-center">
                 <span className="font-handwriting text-base font-bold italic tracking-wide text-cyan-700 drop-shadow-sm">
-                  Quick Answers Below
+                  Professional Templates
                 </span>
                 <svg className="size-10 text-cyan-600 -rotate-12" viewBox="0 0 50 50" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                   <path d="M 10 35 Q 25 10 40 20" />
@@ -124,31 +132,28 @@ export function FaqHero({ trail = [{ name: "Home", path: "/" }, { name: "FAQ", p
               </div>
             </div>
 
-            {/* Decorative FAQ card illustrations */}
-            <div className="relative w-full max-w-md py-6">
-              {/* Card stack */}
-              {[
-                { q: "Is BioCraft really free?", a: "Yes — 100% free. No sign-up, no payment.", rotate: "-rotate-[8deg]", z: "z-0", top: "top-0", offset: "left-0", shadow: "shadow-lg" },
-                { q: "Where is my data stored?", a: "Everything stays in your browser only.", rotate: "rotate-[6deg]", z: "z-10", top: "top-10", offset: "right-0", shadow: "shadow-xl" },
-                { q: "Can I download as PDF?", a: "Yes — PDF, PNG & JPEG all supported.", rotate: "-rotate-[2deg]", z: "z-20", top: "top-20", offset: "left-1/2 -translate-x-1/2", shadow: "shadow-[0_20px_50px_-12px_rgba(6,182,212,0.35)]" },
-              ].map((card) => (
-                <div
-                  key={card.q}
-                  className={`absolute ${card.top} ${card.offset} ${card.rotate} ${card.z} w-[70%] rounded-2xl border border-slate-200/80 bg-white p-4 ${card.shadow} transition-transform duration-500 hover:z-30 hover:rotate-0 hover:scale-105`}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-cyan-600 border border-cyan-200/60">
-                      <HelpCircle className="size-4" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-800">{card.q}</p>
-                      <p className="mt-1 text-xs text-slate-500">{card.a}</p>
-                    </div>
-                  </div>
+            {/* Template Card Showcase Container */}
+            <div className="relative min-h-[30rem] w-full max-w-[34rem] py-6">
+              {/* Left Tilted Card (Navy / Heritage) */}
+              {templateLeft ? (
+                <div className="absolute left-0 top-12 z-0 w-[55%] -rotate-[10deg] rounded-2xl bg-white p-2 shadow-xl border border-slate-200/70 transition-transform duration-500 hover:z-30 hover:rotate-0 hover:scale-105">
+                  <TemplatePreview template={templateLeft} />
                 </div>
-              ))}
-              {/* Spacer to give height to the stacked cards */}
-              <div className="h-52" aria-hidden="true" />
+              ) : null}
+
+              {/* Right Tilted Card (Rose / Gold) */}
+              {templateRight ? (
+                <div className="absolute right-0 top-8 z-10 w-[55%] rotate-[10deg] rounded-2xl bg-white p-2 shadow-xl border border-slate-200/70 transition-transform duration-500 hover:z-30 hover:rotate-0 hover:scale-105">
+                  <TemplatePreview template={templateRight} />
+                </div>
+              ) : null}
+
+              {/* Center Main Card (Classic / Indigo) */}
+              {templateCenter ? (
+                <div className="relative mx-auto z-20 w-[62%] -rotate-[2deg] rounded-2xl bg-white p-2.5 shadow-[0_25px_60px_-15px_rgba(6,182,212,0.35)] border-2 border-cyan-400/40 transition-transform duration-500 hover:scale-105 hover:rotate-0">
+                  <TemplatePreview template={templateCenter} />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
