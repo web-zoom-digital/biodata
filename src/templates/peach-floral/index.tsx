@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { peachPalette, peachSection } from "./styles";
 
 /* SVG Peach Rose Floral Corner Decoration */
@@ -169,6 +170,7 @@ export function PeachFloral({ model, settings }: TemplateProps) {
               </div>
             ) : null}
           </div>
+          <TemplateTrademark color={p.accent} />
         </div>
       </div>
     </TemplateShell>

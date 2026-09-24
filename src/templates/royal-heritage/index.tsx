@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { royalPalette, royalSection } from "./styles";
 
 function Corner({ color, style }: { color: string; style: React.CSSProperties }) {
@@ -80,6 +81,7 @@ export function RoyalHeritage({ model, settings }: TemplateProps) {
             ))}
           </div>
         ) : null}
+        <TemplateTrademark color={p.gold} />
       </div>
     </TemplateShell>
   );

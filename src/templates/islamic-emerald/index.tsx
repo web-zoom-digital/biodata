@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { islamicEmeraldPalette, islamicEmeraldSection } from "./styles";
 
 /* SVG Golden Hanging Lanterns & Mosque Arches Header */
@@ -141,6 +142,7 @@ export function IslamicEmerald({ model, settings }: TemplateProps) {
               </div>
             ) : null}
           </div>
+          <TemplateTrademark color={p.gold} />
         </div>
 
         {/* Bottom Garden Banner */}

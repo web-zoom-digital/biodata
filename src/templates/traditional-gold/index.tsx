@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { goldPalette, goldSection } from "./styles";
 
 function PatternBand({ color, id }: { color: string; id: string }) {
@@ -83,6 +84,7 @@ export function TraditionalGold({ model, settings }: TemplateProps) {
         <div style={{ marginTop: 10 }}>
           <PatternBand color={p.accent} id="gold-band-bottom" />
         </div>
+        <TemplateTrademark color={p.accent} />
       </div>
     </TemplateShell>
   );

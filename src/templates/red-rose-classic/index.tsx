@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { redRosePalette, redRoseSection } from "./styles";
 
 /* Full-width Red Rose Header Garland SVG */
@@ -125,6 +126,7 @@ export function RedRoseClassic({ model, settings }: TemplateProps) {
               </div>
             ) : null}
           </div>
+          <TemplateTrademark color={p.accent} />
         </div>
 
         {/* Bottom Rose Footer Banner */}

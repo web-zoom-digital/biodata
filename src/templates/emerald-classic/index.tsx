@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { emeraldPalette, emeraldSection } from "./styles";
 
 export function EmeraldClassic({ model, settings }: TemplateProps) {
@@ -66,6 +67,7 @@ export function EmeraldClassic({ model, settings }: TemplateProps) {
             ))}
           </div>
         ) : null}
+        <TemplateTrademark color={p.accent} />
       </div>
     </TemplateShell>
   );

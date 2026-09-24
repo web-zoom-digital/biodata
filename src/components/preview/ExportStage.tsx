@@ -13,10 +13,7 @@ interface Props {
   settings: TemplateSettings;
 }
 
-/**
- * Unscaled, off-screen copy of the biodata. Exports read from this node so that
- * zoom level, scroll position and screen size never affect the output.
- */
+
 export const ExportStage = forwardRef<HTMLDivElement, Props>(function ExportStage(props, ref) {
   return createPortal(
     <div

@@ -6,6 +6,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { rosePalette, roseSection } from "./styles";
 
 function Floral({ color, style }: { color: string; style: CSSProperties }) {
@@ -89,6 +90,7 @@ export function ElegantRose({ model, settings }: TemplateProps) {
             ))}
           </div>
         ) : null}
+        <TemplateTrademark color={p.accent} />
       </div>
     </TemplateShell>
   );

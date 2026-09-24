@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { islamicIvoryPalette, islamicIvorySection } from "./styles";
 
 /* SVG Green Islamic Mandala Corner Arches */
@@ -134,6 +135,7 @@ export function IslamicIvory({ model, settings }: TemplateProps) {
               </div>
             ) : null}
           </div>
+          <TemplateTrademark color={p.accent} />
         </div>
 
         {/* Bottom Mosque Minarets Watermark */}

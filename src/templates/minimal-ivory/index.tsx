@@ -5,6 +5,7 @@ import { TemplateGodSymbol } from "../shared/TemplateGodSymbol";
 import { TemplatePhoto } from "../shared/TemplatePhoto";
 import { TemplateSection } from "../shared/TemplateSection";
 import { TemplateShell } from "../shared/TemplateShell";
+import { TemplateTrademark } from "../shared/TemplateTrademark";
 import { ivoryPalette, ivorySection } from "./styles";
 
 export function MinimalIvory({ model, settings }: TemplateProps) {
@@ -52,6 +53,7 @@ export function MinimalIvory({ model, settings }: TemplateProps) {
             </div>
           ))}
         </div>
+        <TemplateTrademark color={p.accent} />
       </div>
     </TemplateShell>
   );
