@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "../ui/Button";
 import { Logo } from "../ui/Logo";
 
+import { InstallPwaButton } from "../pwa/InstallPwaButton";
+
 /* Icon mapping for bottom nav & mobile menu */
 const NAV_ICONS: Record<string, React.ElementType> = {
   "/": Home,
@@ -55,7 +57,7 @@ export function Navbar() {
       {/* ─── Top Header ─────────────────────────────────────────── */}
       <header className="sticky top-0 z-40 border-b border-ink/10 bg-white/90 pt-[env(safe-area-inset-top)] backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-          <Link href="/" aria-label={`${siteConfig.name} home`} className="rounded-lg shrink-0">
+          <Link href="/" aria-label={`${siteConfig.name} home`} className="rounded-lg shrink-0 transition-transform duration-300 hover:scale-[1.03]">
             <Logo />
           </Link>
 
@@ -69,11 +71,11 @@ export function Navbar() {
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={cn(
-                    "flex items-center gap-1.5 rounded-full px-4 py-2 text-[15px] font-medium text-ink/70 transition-all hover:bg-mist hover:text-ink",
-                    isActive(item.href) && "bg-brand-soft text-brand-dark font-semibold",
+                    "flex items-center gap-1.5 rounded-full px-4 py-2 text-[15px] font-medium text-ink/70 transition-all duration-200 hover:bg-mist hover:text-ink hover:scale-[1.02] active:scale-[0.98]",
+                    isActive(item.href) && "bg-brand-soft text-brand-dark font-semibold shadow-xs",
                   )}
                 >
-                  {Icon && <Icon className="size-3.5" aria-hidden="true" />}
+                  {Icon && <Icon className="size-3.5 transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />}
                   {item.label}
                 </Link>
               );
@@ -81,6 +83,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <InstallPwaButton variant="navbar" className="hidden md:inline-flex" />
             <Button href="/create" variant="cta" size="sm" className="hidden sm:inline-flex text-white px-5">
               Create Bio Data
             </Button>
@@ -171,7 +174,8 @@ export function Navbar() {
         </nav>
 
         {/* CTA at bottom of drawer */}
-        <div className="relative z-10 mt-auto border-t border-slate-100 bg-white px-5 py-6 mb-16">
+        <div className="relative z-10 mt-auto border-t border-slate-100 bg-white px-5 py-6 mb-16 space-y-3">
+          <InstallPwaButton variant="mobile" />
           <Link
             href="/create"
             className="flex h-13 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-brand-dark via-brand to-emerald-500 px-6 text-base font-bold text-white shadow-lg shadow-brand/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -179,7 +183,7 @@ export function Navbar() {
             <Pencil className="size-4" aria-hidden="true" />
             Create Your Biodata — Free
           </Link>
-          <p className="mt-3 text-center text-xs text-ink/50">No sign-up · No payment · Instant download</p>
+          <p className="text-center text-xs text-ink/50">No sign-up · No payment · Instant download</p>
         </div>
       </div>
 

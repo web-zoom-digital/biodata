@@ -44,10 +44,10 @@ export const WHY = [
 ];
 
 export const BIODATA_TYPES = [
-  { label: "Marriage biodata for boy", href: "/blog/marriage-biodata-format-for-boy", text: "What to include and how to order it." },
-  { label: "Marriage biodata for girl", href: "/blog/marriage-biodata-format-for-girl", text: "A clear, respectful format." },
-  { label: "Biodata format in Hindi", href: "/blog/marriage-biodata-format-in-hindi", text: "Headings and terms families use." },
-  { label: "Simple biodata", href: "/templates", text: "Quiet templates with plenty of white space." },
-  { label: "Traditional biodata", href: "/templates", text: "Gold, maroon and framed layouts." },
-  { label: "Modern biodata", href: "/templates", text: "Clean sidebar and column layouts." },
+  { label: "Free Marriage Biodata Maker", href: "/free-marriage-biodata-maker", text: "Create & download A4 biodata online for free." },
+  { label: "Wedding Biodata Maker", href: "/wedding-biodata-maker", text: "Matrimonial templates for wedding proposals." },
+  { label: "Hindu Marriage Biodata", href: "/hindu-marriage-biodata", text: "Cultural, family and optional horoscope formats." },
+  { label: "Biodata Format in Hindi", href: "/blog/marriage-biodata-format-in-hindi", text: "Headings and terms Hindi families use." },
+  { label: "Biodata Without Photo", href: "/marriage-biodata-without-photo", text: "Simple, clean non-photo biodata layouts." },
+  { label: "Marriage Biodata PDF Format", href: "/marriage-biodata-pdf-format", text: "Create and download print-ready A4 PDFs." },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { RevealOnScroll, RevealItem } from "@/components/ui/RevealOnScroll";
 import { TEMPLATE_FILTERS, type TemplateFilter } from "@/data/templates";
 import { cn } from "@/lib/utils";
 import { templates } from "@/templates";
@@ -22,8 +23,8 @@ export function TemplatesGallery({ cards }: { cards: Record<string, ReactNode> }
               aria-pressed={filter === f}
               onClick={() => setFilter(f)}
               className={cn(
-                "h-10 shrink-0 rounded-full border px-4 text-xs font-semibold transition-colors",
-                filter === f ? "border-brand-dark bg-brand-dark text-white shadow-sm" : "border-ink/15 bg-white text-ink/75 hover:border-brand hover:text-brand-dark",
+                "h-10 shrink-0 rounded-full border px-4 text-xs font-semibold transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95",
+                filter === f ? "border-brand-dark bg-brand-dark text-white shadow-sm scale-[1.02]" : "border-ink/15 bg-white text-ink/75 hover:border-brand hover:text-brand-dark",
               )}
             >
               {f} <span className={cn("ml-1 text-xs opacity-75", filter === f ? "text-white" : "text-ink/45")}>({count})</span>
@@ -31,18 +32,18 @@ export function TemplatesGallery({ cards }: { cards: Record<string, ReactNode> }
           );
         })}
       </div>
-      <p className=" xzzzzzzzztext-sm text-ink/60" role="status">
+      <p className="mt-2 text-sm text-ink/60" role="status">
         Showing {visible.length} {visible.length === 1 ? "template" : "templates"}
         {filter !== "All" ? ` in ${filter}` : ""}.
       </p>
       {visible.length === 0 ? (
         <p className="mt-10 rounded-2xl bg-mist p-8 text-center text-ink/70">No templates in this category yet. Try another filter.</p>
       ) : (
-        <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-8 sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealOnScroll key={filter} staggerChildren={0.08} delay={0.1} className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-8 sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((t) => (
-            <li key={t.id}>{cards[t.id]}</li>
+            <RevealItem key={t.id}>{cards[t.id]}</RevealItem>
           ))}
-        </ul>
+        </RevealOnScroll>
       )}
     </div>
   );

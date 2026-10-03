@@ -4,7 +4,8 @@ description: "Common Hindi headings and terms for a marriage biodata (विव�
 summary: "A Hindi biodata uses familiar headings such as व्यक्तिगत विवरण, शिक्षा, व्यवसाय, पारिवारिक विवरण and संपर्क. BioCraft's templates print English headings, but you can type Hindi in any value field."
 category: "Formats"
 date: "2026-08-12"
-related: ["what-to-include-in-marriage-biodata", "marriage-biodata-format-for-boy", "marriage-biodata-format-for-girl"]
+updated: "2026-10-03"
+related: ["marriage-biodata-format-for-boy", "marriage-biodata-format-for-girl", "how-to-make-marriage-biodata-online"]
 faqs:
   - q: "Can I make a fully Hindi biodata in BioCraft?"
     a: "You can type Hindi in every value field, such as names, places and About Me. The built-in field labels are in English. To add a Hindi label, use the Additional information section, where you write both the label and the value."
@@ -12,7 +13,7 @@ faqs:
     a: "Hindi is drawn using a font available on the device. Different devices have different Devanagari fonts, so the look can vary. Check the preview before you download."
 ---
 
-Many families prefer a biodata (बायोडाटा) in Hindi, or in both Hindi and English. The structure is the same as in any format. Only the headings and a few terms change.
+Many families prefer a biodata (बायोडाटा) in Hindi, or in both Hindi and English. The structure is the same as in any format. Only the headings and a few terms change. You can easily prepare your profile using our [free marriage biodata maker](/free-marriage-biodata-maker) or explore our dedicated [wedding biodata maker](/wedding-biodata-maker) templates.
 
 ## Common headings
 
@@ -46,12 +47,15 @@ Many families prefer a biodata (बायोडाटा) in Hindi, or in both H
 | मांगलिक | Manglik status |
 | मोबाइल नंबर | Mobile number |
 
+For traditional Hindu cultural and astrological details, read our complete guide on [Hindu marriage biodata](/hindu-marriage-biodata).
+
 ## How to prepare a Hindi or bilingual biodata
 
-1. Fill in the [editor](/create) as usual, typing names, places and descriptions in Hindi where you want them.
+1. Fill in the [online editor](/create) as usual, typing names, places and descriptions in Hindi where you want them.
 2. Use the Additional information section for any label you want in Hindi, for example "शौक" with the value.
-3. Check the preview. Hindi text is drawn with your device's font, so confirm it looks right before downloading.
-4. Download as PDF or image and share.
+3. If you prefer not to include a photograph, see our advice on [marriage biodata without photo](/marriage-biodata-without-photo).
+4. Check the live preview. Hindi text is drawn with your device's font, so confirm it looks right before downloading.
+5. Download as an A4 PDF or image. Learn more about file resolutions in our [marriage biodata PDF format](/marriage-biodata-pdf-format) guide.
 
 ## Keep it readable
 

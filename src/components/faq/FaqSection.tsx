@@ -22,18 +22,6 @@ export function FaqSection({ faqs, title = "Questions people ask before they sta
         <FaqList faqs={faqs} />
       </div>
 
-      {/* Bottom Redirect Button */}
-      <div className="mt-12 flex justify-center">
-        <Button
-          href="/faq"
-          variant="outline"
-          size="lg"
-          className="group rounded-full bg-white px-7 py-3 font-semibold text-slate-800 shadow-sm hover:shadow-md hover:border-sky-500"
-        >
-          <span>View All Frequently Asked Questions</span>
-          <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-        </Button>
-      </div>
-    </Section>
+      </Section>
   );
 }

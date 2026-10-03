@@ -2,6 +2,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { Container } from "@/components/layout/Container";
+import { RevealOnScroll, RevealItem } from "@/components/ui/RevealOnScroll";
 import { getAll } from "@/lib/content";
 
 export function HomeBlog() {
@@ -13,7 +14,7 @@ export function HomeBlog() {
     <section className="relative overflow-hidden bg-slate-50/70 py-16 sm:py-24 border-t border-slate-200/60">
       <Container className="relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+        <RevealOnScroll direction="up" className="flex flex-col items-center text-center max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-sky-300/80 bg-sky-50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-sky-700 shadow-sm">
             <BookOpen className="size-3.5 text-sky-600" aria-hidden="true" />
             <span>Marriage Biodata Guides & Blog</span>
@@ -26,27 +27,27 @@ export function HomeBlog() {
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg">
             Everything you need to know about preparing, formatting, and presenting a winning marriage biodata for family approval.
           </p>
-        </div>
+        </RevealOnScroll>
 
         {/* Featured Blog Cards Grid */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealOnScroll staggerChildren={0.12} delay={0.15} className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((item) => (
-            <div key={item.slug} className="h-full">
+            <RevealItem key={item.slug} className="h-full">
               <ArticleCard item={item} kind="blog" />
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealOnScroll>
 
         {/* Bottom Redirect Button */}
-        <div className="mt-12 flex justify-center">
+        <RevealOnScroll direction="up" delay={0.25} className="mt-12 flex justify-center">
           <Link
             href="/blog"
-            className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-indigo-500/30 transition-all hover:scale-[1.03] hover:shadow-indigo-500/40 active:scale-[0.98]"
+            className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-indigo-500/30 transition-all hover:scale-[1.03] hover:shadow-indigo-500/40 active:scale-[0.98] cursor-pointer"
           >
             <span>Explore All Blog Articles & Guides</span>
             <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
-        </div>
+        </RevealOnScroll>
       </Container>
     </section>
   );
