@@ -6,6 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticPages: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
     { path: "/", priority: 1, changeFrequency: "weekly" },
+    { path: "/free-marriage-biodata-maker", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/wedding-biodata-maker", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/hindu-marriage-biodata", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/marriage-biodata-without-photo", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/marriage-biodata-pdf-format", priority: 0.9, changeFrequency: "weekly" },
     { path: "/templates", priority: 0.9, changeFrequency: "weekly" },
     { path: "/how-it-works", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.8, changeFrequency: "weekly" },

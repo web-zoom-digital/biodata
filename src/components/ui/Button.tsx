@@ -6,16 +6,17 @@ type Variant = "primary" | "cta" | "outline" | "ghost" | "danger";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap transition-colors duration-150 " +
-  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-55 disabled:pointer-events-none select-none";
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap cursor-pointer transition-all duration-200 ease-out " +
+  "hover:scale-[1.02] hover:shadow-md active:scale-[0.98] active:shadow-sm " +
+  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-55 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none disabled:pointer-events-none select-none";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-brand-dark text-white hover:bg-[#065f46]",
+  primary: "bg-brand-dark text-white hover:bg-[#065f46] shadow-sm",
   // Dark text on orange keeps AA contrast (white on #F97316 does not).
-  cta: "bg-cta text-ink hover:bg-[#fb8a3c] shadow-[0_1px_0_rgba(0,0,0,0.12)]",
-  outline: "bg-white text-ink border border-ink/15 hover:border-brand hover:text-brand-dark",
-  ghost: "text-ink hover:bg-mist",
-  danger: "bg-white text-red-700 border border-red-200 hover:bg-red-50",
+  cta: "bg-cta text-ink hover:bg-[#fb8a3c] shadow-sm shadow-orange-500/20",
+  outline: "bg-white text-ink border border-ink/15 hover:border-brand hover:text-brand-dark shadow-xs",
+  ghost: "text-ink hover:bg-mist hover:shadow-none hover:scale-100 active:scale-95",
+  danger: "bg-white text-red-700 border border-red-200 hover:bg-red-50 hover:border-red-300 shadow-xs",
 };
 
 const sizes: Record<Size, string> = {

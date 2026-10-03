@@ -25,19 +25,19 @@ export function EditorHeader() {
           <Link
             href="/templates"
             aria-label="Back to Templates"
-            className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-2.5 text-xs font-medium text-ink/75 hover:bg-mist focus-visible:outline-2 focus-visible:outline-brand sm:text-sm"
+            className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-2.5 text-xs font-medium text-ink/75 transition-all duration-200 hover:bg-mist hover:text-ink hover:scale-[1.02] active:scale-[0.98] cursor-pointer focus-visible:outline-2 focus-visible:outline-brand sm:text-sm"
           >
             <ArrowLeft className="size-4 shrink-0 sm:size-5" aria-hidden="true" />
             <span>Templates</span>
           </Link>
-          <Link href="/" aria-label="Home" className="hidden shrink-0 lg:block">
+          <Link href="/" aria-label="Home" className="hidden shrink-0 lg:block transition-transform duration-300 hover:scale-105 cursor-pointer">
             <LogoMark className="size-8" />
           </Link>
 
           <button
             type="button"
             onClick={() => setTemplateDrawer(true)}
-            className="flex h-10 min-w-0 flex-1 items-center gap-1.5 rounded-full border border-ink/15 bg-white px-3 text-left text-xs sm:text-sm hover:border-brand focus-visible:outline-2 focus-visible:outline-brand lg:flex-none"
+            className="flex h-10 min-w-0 flex-1 items-center gap-1.5 rounded-full border border-ink/15 bg-white px-3 text-left text-xs sm:text-sm transition-all duration-200 hover:border-brand hover:shadow-xs cursor-pointer focus-visible:outline-2 focus-visible:outline-brand lg:flex-none"
           >
             <LayoutTemplate className="size-4 shrink-0 text-brand-dark" aria-hidden="true" />
             <span className="truncate">
@@ -55,7 +55,7 @@ export function EditorHeader() {
           <button
             type="button"
             onClick={() => setPreviewModal(true)}
-            className="hidden h-9 items-center gap-2 rounded-full border border-ink/15 px-4 text-sm font-semibold hover:border-brand hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-brand lg:inline-flex"
+            className="hidden h-9 items-center gap-2 rounded-full border border-ink/15 px-4 text-sm font-semibold transition-all duration-200 hover:border-brand hover:text-brand-dark hover:scale-[1.02] active:scale-[0.98] cursor-pointer focus-visible:outline-2 focus-visible:outline-brand lg:inline-flex"
           >
             <Eye className="size-4" aria-hidden="true" /> Preview
           </button>
@@ -79,7 +79,7 @@ export function EditorHeader() {
               aria-pressed={mobileTab === key}
               onClick={() => setMobileTab(key)}
               className={cn(
-                "flex flex-1 items-center justify-center gap-1.5 rounded-full py-2.5 px-2 text-xs font-bold transition-all duration-200",
+                "flex flex-1 items-center justify-center gap-1.5 rounded-full py-2.5 px-2 text-xs font-bold transition-all duration-200 cursor-pointer",
                 mobileTab === key
                   ? "bg-brand-dark text-white shadow-md shadow-brand-dark/20 scale-[1.02]"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70",

@@ -6,6 +6,8 @@ import { FaqList } from "@/components/faq/FaqList";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { TemplatePreview } from "@/components/templates/TemplatePreview";
 import { Button } from "@/components/ui/Button";
+import { RevealOnScroll, RevealItem } from "@/components/ui/RevealOnScroll";
+import { TiltCard } from "@/components/ui/TiltCard";
 import type { ContentItem, ContentKind, ContentMeta } from "@/lib/content";
 import { articleJsonLd, breadcrumbJsonLd, faqJsonLd, howToJsonLd } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
@@ -53,20 +55,20 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
           className="object-cover object-center opacity-35 mix-blend-overlay"
         />
 
-        <div className="pointer-events-none absolute -top-40 -left-40 size-[32rem] rounded-full bg-purple-300/40 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute top-1/2 -right-20 size-[28rem] rounded-full bg-violet-300/35 blur-3xl" aria-hidden="true" />
+        <div className="pointer-events-none absolute -top-40 -left-40 size-[32rem] rounded-full bg-purple-300/40 blur-3xl animate-float-gentle" aria-hidden="true" />
+        <div className="pointer-events-none absolute top-1/2 -right-20 size-[28rem] rounded-full bg-violet-300/35 blur-3xl animate-float-reverse" aria-hidden="true" />
 
         <Container className="relative z-10">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs font-semibold uppercase tracking-wider text-slate-700 flex justify-center lg:justify-start">
             <ol className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
               <li>
-                <Link href="/" className="hover:text-purple-700 hover:underline">
+                <Link href="/" className="hover:text-purple-700 hover:underline cursor-pointer">
                   Home
                 </Link>
                 <span aria-hidden="true" className="ml-2 text-slate-400">/</span>
               </li>
               <li>
-                <Link href={base.path} className="hover:text-purple-700 hover:underline">
+                <Link href={base.path} className="hover:text-purple-700 hover:underline cursor-pointer">
                   {base.name}
                 </Link>
                 <span aria-hidden="true" className="ml-2 text-slate-400">/</span>
@@ -78,17 +80,8 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
           </nav>
 
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
-            <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-7">
-              <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-purple-300/80 bg-white/90 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 shadow-sm backdrop-blur-md">
-                <Sparkles className="size-3.5 text-purple-500" aria-hidden="true" />
-                <span>{item.category}</span>
-                <span className="text-slate-300">&middot;</span>
-                <time dateTime={item.updated ?? item.date}>Updated {formatDate(item.updated ?? item.date)}</time>
-                <span className="text-slate-300">&middot;</span>
-                <span>{item.readingMinutes} min read</span>
-              </div>
-
-              <h1 className="mt-4 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-[1.15]">
+            <RevealOnScroll direction="up" className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-7">
+              <h1 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl lg:leading-[1.15]">
                 {item.title}
               </h1>
 
@@ -108,10 +101,10 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
                   <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
                 </Button>
               </div>
-            </div>
+            </RevealOnScroll>
 
-            <div className="flex flex-col items-center justify-center lg:col-span-5">
-              <div className="group relative w-full max-w-xs sm:max-w-sm rounded-3xl bg-white p-3.5 shadow-2xl border-2 border-purple-400/40 transition-transform duration-300 hover:scale-[1.02]">
+            <RevealOnScroll direction="left" delay={0.15} className="flex flex-col items-center justify-center lg:col-span-5">
+              <TiltCard maxTilt={4} scale={1.02} className="w-full max-w-xs sm:max-w-sm rounded-3xl bg-white p-3.5 shadow-2xl border-2 border-purple-400/40">
                 <div className="mb-3 flex items-center justify-between px-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-1 rounded-full">
                     Recommended Template
@@ -130,21 +123,23 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </Button>
                 </div>
-              </div>
-            </div>
+              </TiltCard>
+            </RevealOnScroll>
           </div>
         </Container>
       </section>
 
       <Container className="grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_18rem] lg:py-16">
         <article className="min-w-0 max-w-3xl">
-          <aside className="mb-8 flex gap-3 rounded-2xl border border-brand/25 bg-brand-soft p-5" aria-label="Quick answer">
-            <Lightbulb className="mt-0.5 size-5 shrink-0 text-brand-dark" aria-hidden="true" />
-            <p className="leading-relaxed text-ink/85">
-              <strong>Quick answer: </strong>
-              {item.summary}
-            </p>
-          </aside>
+          <RevealOnScroll direction="up">
+            <aside className="mb-8 flex gap-3 rounded-2xl border border-brand/25 bg-brand-soft p-5 shadow-xs" aria-label="Quick answer">
+              <Lightbulb className="mt-0.5 size-5 shrink-0 text-brand-dark" aria-hidden="true" />
+              <p className="leading-relaxed text-ink/85">
+                <strong>Quick answer: </strong>
+                {item.summary}
+              </p>
+            </aside>
+          </RevealOnScroll>
 
           {item.headings.length > 2 ? (
             <details className="mb-8 rounded-2xl border border-ink/10 p-4 lg:hidden">
@@ -152,7 +147,7 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
               <ol className="mt-3 space-y-2 text-[15px]">
                 {item.headings.map((h) => (
                   <li key={h.id}>
-                    <a className="text-brand-dark underline underline-offset-4" href={`#${h.id}`}>
+                    <a className="text-brand-dark underline underline-offset-4 cursor-pointer hover:text-purple-700" href={`#${h.id}`}>
                       {h.text}
                     </a>
                   </li>
@@ -163,67 +158,73 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
 
           <div className="prose-article" dangerouslySetInnerHTML={{ __html: item.html }} />
 
-          <div className="my-10 rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50/70 via-white to-fuchsia-50/70 p-6 sm:p-8 shadow-sm">
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <div className="w-full sm:w-48 shrink-0 rounded-2xl bg-white p-2 border border-slate-200 shadow-md">
-                <TemplatePreview template={featuredTemplate} />
+          <RevealOnScroll direction="up" className="my-10">
+            <div className="rounded-3xl border-2 border-purple-200 bg-gradient-to-br from-purple-50/70 via-white to-fuchsia-50/70 p-6 sm:p-8 shadow-sm">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <div className="w-full sm:w-48 shrink-0 rounded-2xl bg-white p-2 border border-slate-200 shadow-md">
+                  <TemplatePreview template={featuredTemplate} />
+                </div>
+                <div className="flex flex-col items-start text-left">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-3 py-1 rounded-full">
+                    <Sparkles className="size-3" /> Matching Template
+                  </span>
+                  <h3 className="mt-2 font-display text-xl font-bold text-slate-900">
+                    Ready to create your biodata with {featuredTemplate.name}?
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Customize this exact template with your personal details in our easy online editor. Free PDF & image download.
+                  </p>
+                  <Button
+                    href={editUrl}
+                    variant="cta"
+                    size="md"
+                    className="group mt-4 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/25 transition-all hover:scale-[1.03]"
+                  >
+                    <Pencil className="size-4" />
+                    <span>Edit {featuredTemplate.name} Template</span>
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </Button>
+                </div>
               </div>
-              <div className="flex flex-col items-start text-left">
-                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-3 py-1 rounded-full">
-                  <Sparkles className="size-3" /> Matching Template
-                </span>
-                <h3 className="mt-2 font-display text-xl font-bold text-slate-900">
-                  Ready to create your biodata with {featuredTemplate.name}?
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Customize this exact template with your personal details in our easy online editor. Free PDF & image download.
-                </p>
+            </div>
+          </RevealOnScroll>
+
+          {item.faqs.length ? (
+            <RevealOnScroll direction="up" className="mt-14">
+              <section aria-labelledby="article-faq">
+                <h2 id="article-faq" className="mb-5 font-display text-2xl font-semibold">
+                  Common questions
+                </h2>
+                <FaqList faqs={item.faqs} />
+              </section>
+            </RevealOnScroll>
+          ) : null}
+
+          <RevealOnScroll direction="up" className="mt-14">
+            <div className="rounded-3xl bg-slate-900 p-7 text-white sm:p-9 shadow-xl">
+              <h2 className="font-display text-2xl font-bold">Put this into practice</h2>
+              <p className="mt-2 max-w-lg text-slate-300">Open the editor with {featuredTemplate.name}, fill in your details and download a high quality A4 PDF in minutes.</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Button
                   href={editUrl}
                   variant="cta"
                   size="md"
-                  className="group mt-4 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-6 py-3 text-sm font-bold text-white shadow-md shadow-orange-500/25 transition-all hover:scale-[1.03]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-6 py-3 font-bold text-white shadow-lg"
                 >
-                  <Pencil className="size-4" />
-                  <span>Edit {featuredTemplate.name} Template</span>
+                  <span>Edit This Template</span>
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Button>
+                <Button href="/templates" variant="outline" className="rounded-full border-white/30 bg-transparent text-white hover:border-white hover:text-white">
+                  Browse all templates
                 </Button>
               </div>
             </div>
-          </div>
-
-          {item.faqs.length ? (
-            <section className="mt-14" aria-labelledby="article-faq">
-              <h2 id="article-faq" className="mb-5 font-display text-2xl font-semibold">
-                Common questions
-              </h2>
-              <FaqList faqs={item.faqs} />
-            </section>
-          ) : null}
-
-          <div className="mt-14 rounded-3xl bg-slate-900 p-7 text-white sm:p-9 shadow-xl">
-            <h2 className="font-display text-2xl font-bold">Put this into practice</h2>
-            <p className="mt-2 max-w-lg text-slate-300">Open the editor with {featuredTemplate.name}, fill in your details and download a high quality A4 PDF in minutes.</p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Button
-                href={editUrl}
-                variant="cta"
-                size="md"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-6 py-3 font-bold text-white shadow-lg"
-              >
-                <span>Edit This Template</span>
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Button>
-              <Button href="/templates" variant="outline" className="rounded-full border-white/30 bg-transparent text-white hover:border-white hover:text-white">
-                Browse all templates
-              </Button>
-            </div>
-          </div>
+          </RevealOnScroll>
         </article>
 
         <aside className="space-y-8" aria-label="Article Sidebar">
           <div className="sticky top-24 space-y-6">
-            <div className="rounded-2xl border border-purple-200 bg-white p-4 shadow-sm">
+            <TiltCard maxTilt={3} scale={1.01} className="rounded-2xl border border-purple-200 bg-white p-4 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">Featured Template</p>
               <h4 className="font-bold text-slate-900 text-sm mb-3">{featuredTemplate.name}</h4>
               <div className="rounded-xl overflow-hidden border border-slate-100 mb-3">
@@ -238,7 +239,7 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
                 <span>Edit Template</span>
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </Button>
-            </div>
+            </TiltCard>
 
             {item.headings.length > 2 ? (
               <div className="hidden lg:block border-l-2 border-slate-200 pl-4">
@@ -246,7 +247,7 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
                 <ol className="space-y-2 text-sm leading-snug">
                   {item.headings.map((h) => (
                     <li key={h.id}>
-                      <a href={`#${h.id}`} className="text-slate-600 underline-offset-4 hover:text-purple-700 hover:underline">
+                      <a href={`#${h.id}`} className="text-slate-600 underline-offset-4 hover:text-purple-700 hover:underline cursor-pointer">
                         {h.text}
                       </a>
                     </li>
@@ -261,19 +262,21 @@ export function ArticleLayout({ item, kind, related }: { item: ContentItem; kind
       {related.length ? (
         <section className="border-t border-slate-200 bg-slate-50/70 py-14">
           <Container>
-            <div className="flex items-end justify-between gap-4">
-              <h2 className="font-display text-2xl font-semibold sm:text-3xl">Keep reading</h2>
-              <Link href={base.path} className="inline-flex items-center gap-1.5 font-semibold text-purple-700 underline-offset-4 hover:underline">
-                All {base.name.toLowerCase()} <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-            </div>
-            <ul className="mt-8 grid gap-6 md:grid-cols-3">
+            <RevealOnScroll direction="up">
+              <div className="flex items-end justify-between gap-4">
+                <h2 className="font-display text-2xl font-semibold sm:text-3xl">Keep reading</h2>
+                <Link href={base.path} className="inline-flex items-center gap-1.5 font-semibold text-purple-700 underline-offset-4 hover:underline cursor-pointer">
+                  All {base.name.toLowerCase()} <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll staggerChildren={0.1} delay={0.15} className="mt-8 grid gap-6 md:grid-cols-3">
               {related.map((r) => (
-                <li key={r.slug}>
+                <RevealItem key={r.slug}>
                   <ArticleCard item={r} kind={kind} />
-                </li>
+                </RevealItem>
               ))}
-            </ul>
+            </RevealOnScroll>
           </Container>
         </section>
       ) : null}

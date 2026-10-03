@@ -46,6 +46,7 @@ docs/             Architecture, templates, export, SEO, images, change guide
 
 ## Documentation
 
+- [Comprehensive Project Summary](PROJECT_SUMMARY.md): Full technical overview for developers & AI assistants
 - [Architecture](docs/ARCHITECTURE.md): data flow and state
 - [Template development](docs/TEMPLATE_DEVELOPMENT.md): add or edit a template
 - [Export system](docs/EXPORT_SYSTEM.md): PDF/PNG/JPEG, pagination, known limits

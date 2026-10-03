@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Toaster } from "@/components/ui/Toaster";
+import { PwaProvider } from "@/components/pwa/PwaProvider";
 import { siteConfig } from "@/config/site";
 import { defaultMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -20,7 +21,14 @@ const figtree = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = defaultMetadata;
+export const metadata: Metadata = {
+  ...defaultMetadata,
+  appleWebApp: {
+    capable: true,
+    title: "BioCraft",
+    statusBarStyle: "default",
+  },
+};
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -33,14 +41,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-IN" className={`${fraunces.variable} ${figtree.variable}`}>
       <body className="min-h-dvh antialiased">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
-        >
-          Skip to content
-        </a>
-        {children}
-        <Toaster />
+        <PwaProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+          >
+            Skip to content
+          </a>
+          {children}
+          <Toaster />
+        </PwaProvider>
       </body>
     </html>
   );

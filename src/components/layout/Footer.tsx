@@ -4,6 +4,7 @@ import { ArrowUp, CheckCircle2, Heart, Lock, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Logo } from "../ui/Logo";
+import { InstallPwaButton } from "../pwa/InstallPwaButton";
 
 const GROUPS = [
   {
@@ -16,21 +17,23 @@ const GROUPS = [
     ],
   },
   {
-    title: "Biodata Formats",
+    title: "Marriage Biodata Tools",
     links: [
-      { label: "Format for Boy", href: "/blog/marriage-biodata-format-for-boy" },
-      { label: "Format for Girl", href: "/blog/marriage-biodata-format-for-girl" },
-      { label: "Online Biodata Maker", href: "/blog/how-to-make-marriage-biodata-online" },
-      { label: "Hindi Biodata Formats", href: "/blog/marriage-biodata-format-in-hindi" },
+      { label: "Free Marriage Biodata Maker", href: "/free-marriage-biodata-maker" },
+      { label: "Wedding Biodata Maker", href: "/wedding-biodata-maker" },
+      { label: "Hindu Marriage Biodata", href: "/hindu-marriage-biodata" },
+      { label: "Marriage Biodata Without Photo", href: "/marriage-biodata-without-photo" },
+      { label: "Marriage Biodata PDF Format", href: "/marriage-biodata-pdf-format" },
     ],
   },
   {
-    title: "Guides & Tips",
+    title: "Biodata Guides",
     links: [
-      { label: "How to Make Biodata", href: "/guides/how-to-make-marriage-biodata" },
+      { label: "Marriage Biodata Format in Hindi", href: "/blog/marriage-biodata-format-in-hindi" },
+      { label: "Format for Boy", href: "/blog/marriage-biodata-format-for-boy" },
+      { label: "Format for Girl", href: "/blog/marriage-biodata-format-for-girl" },
       { label: "Photo Selection Advice", href: "/blog/how-to-choose-a-biodata-photo" },
       { label: "All Blog & Articles", href: "/blog" },
-      { label: "Step-by-Step Guides", href: "/guides" },
     ],
   },
   {
@@ -68,6 +71,7 @@ export function Footer() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-900/90 px-3 py-1 text-xs font-semibold text-emerald-400">
               <ShieldCheck className="size-3" /> Zero Server Storage
             </span>
+            <InstallPwaButton variant="footer" />
           </div>
         </div>
 
@@ -82,7 +86,7 @@ export function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="inline-flex text-xs sm:text-sm text-slate-400 transition-colors duration-200 hover:text-sky-400 hover:translate-x-0.5"
+                      className="inline-flex text-xs sm:text-sm text-slate-400 transition-all duration-200 hover:text-sky-400 hover:translate-x-1 cursor-pointer"
                     >
                       {l.label}
                     </Link>
@@ -100,7 +104,7 @@ export function Footer() {
             <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
             <span className="hidden sm:inline text-slate-700">&middot;</span>
             <p className="flex items-center gap-1">
-              Crafted with <Heart className="size-3 text-rose-500 fill-rose-500" /> for families
+              Crafted with <Heart className="size-3 text-rose-500 fill-rose-500 transition-transform duration-300 hover:scale-125" /> for families
             </p>
           </div>
 
@@ -112,7 +116,7 @@ export function Footer() {
               type="button"
               onClick={scrollToTop}
               aria-label="Scroll back to top"
-              className="flex size-8 items-center justify-center rounded-full border border-slate-800 bg-slate-900 text-slate-400 transition-colors hover:border-sky-500/50 hover:bg-slate-800 hover:text-white"
+              className="flex size-9 items-center justify-center rounded-full border border-slate-800 bg-slate-900 text-slate-400 transition-all duration-300 hover:scale-110 hover:border-sky-500/60 hover:bg-slate-800 hover:text-white hover:shadow-lg hover:shadow-sky-500/10 active:scale-95 cursor-pointer"
             >
               <ArrowUp className="size-4" />
             </button>

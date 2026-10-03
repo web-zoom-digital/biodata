@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Container } from "./Container";
 import { JsonLd } from "../seo/JsonLd";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export interface Crumb {
@@ -58,7 +59,7 @@ export function PageHero({
       {crumbs?.length ? <JsonLd data={breadcrumbJsonLd(trail)} /> : null}
       
       <Container className="relative z-10">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center rounded-2xl border border-white/15 bg-white/10 p-6 sm:mx-0 sm:items-start sm:p-8 sm:text-left backdrop-blur-md shadow-2xl">
+        <RevealOnScroll direction="up" className="mx-auto flex max-w-3xl flex-col items-center text-center rounded-2xl border border-white/15 bg-white/10 p-6 sm:mx-0 sm:items-start sm:p-8 sm:text-left backdrop-blur-md shadow-2xl transition-all duration-300 hover:border-white/25">
           {crumbs?.length ? (
             <nav aria-label="Breadcrumb" className="mb-4 text-xs font-semibold uppercase tracking-wider text-sky-300 flex justify-center sm:justify-start">
               <ol className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1">
@@ -66,7 +67,7 @@ export function PageHero({
                   <li key={c.path} className="flex items-center gap-2">
                     {i < trail.length - 1 ? (
                       <>
-                        <Link href={c.path} className="hover:text-white hover:underline">
+                        <Link href={c.path} className="hover:text-white hover:underline cursor-pointer">
                           {c.name}
                         </Link>
                         <span aria-hidden="true" className="text-white/40">/</span>
@@ -84,9 +85,8 @@ export function PageHero({
           <h1 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">{title}</h1>
           {intro ? <p className="mt-3.5 text-base sm:text-lg leading-relaxed text-sky-100/90">{intro}</p> : null}
           {children}
-        </div>
+        </RevealOnScroll>
       </Container>
     </section>
   );
 }
-

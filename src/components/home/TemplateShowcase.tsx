@@ -2,29 +2,32 @@ import { ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/layout/Container";
 import { TemplateCard } from "@/components/templates/TemplateCard";
 import { Button } from "@/components/ui/Button";
+import { RevealOnScroll, RevealItem } from "@/components/ui/RevealOnScroll";
 import { templates } from "@/templates";
 
 export function TemplateShowcase() {
   return (
     <Section tone="soft">
       {/* Centered Heading */}
-      <SectionHeading
-        align="center"
-        title="Templates for every kind of family"
-        intro="Traditional, modern or minimal. Each preview below is drawn with sample details, and yours will replace them in the editor."
-      />
+      <RevealOnScroll direction="up">
+        <SectionHeading
+          align="center"
+          title="Templates for every kind of family"
+          intro="Traditional, modern or minimal. Each preview below is drawn with sample details, and yours will replace them in the editor."
+        />
+      </RevealOnScroll>
 
       {/* Grid of Templates */}
-      <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:mt-12 sm:gap-x-8 sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <RevealOnScroll staggerChildren={0.1} delay={0.15} className="mt-8 grid grid-cols-2 gap-x-3 gap-y-6 sm:mt-12 sm:gap-x-8 sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {templates.slice(0, 6).map((t) => (
-          <li key={t.id}>
+          <RevealItem key={t.id}>
             <TemplateCard template={t} />
-          </li>
+          </RevealItem>
         ))}
-      </ul>
+      </RevealOnScroll>
 
       {/* Bottom Redirect Button */}
-      <div className="mt-12 flex justify-center">
+      <RevealOnScroll direction="up" delay={0.25} className="mt-12 flex justify-center">
         <Button
           href="/templates"
           variant="cta"
@@ -34,8 +37,7 @@ export function TemplateShowcase() {
           <span>Explore All Templates</span>
           <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
         </Button>
-      </div>
+      </RevealOnScroll>
     </Section>
   );
 }
-
